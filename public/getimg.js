@@ -27,7 +27,7 @@ const getImages = () =>{
     };
     console.log(keygen16)
     console.log(typeof(keygen16))
-    xhttp.open('GET','/scraper/' + keygen16,true);
+    xhttp.open('GET','https://nonspace.netlify.app/scraper?=' + keygen16,true);
     xhttp.send();
 }
 

@@ -11,9 +11,9 @@ let searchurl = "https://www.picuki.com/tag/"
 app.use(express.static('public'));
 
 
-app.get('https://nonspace.netlify.app/scraper/:keygen', async (request, response) =>{
+app.get('/scraper/:keygen', async (request, response) =>{
     console.log("searching")
-    const keygen = request.QueryStringParameters["scraper"]
+    const keygen = request.params.keygen
     console.log(keygen)
     const content = await scrapeImages(keygen)
     response.set({
