@@ -11,7 +11,7 @@ let searchurl = "https://www.picuki.com/tag/"
 app.use(express.static('public'));
 
 
-app.get('https://localhost:5000/scraper/:keygen', async (request, response) =>{
+app.get('/scraper/:keygen', async (request, response) =>{
     console.log("searching")
     const keygen = request.params.keygen
     console.log(keygen)
