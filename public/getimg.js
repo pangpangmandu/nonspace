@@ -26,7 +26,7 @@ const getImages = () =>{
     };
     console.log(keygen16)
     console.log(typeof(keygen16))
-    xhttp.open('GET','/scraper/' + keygen16,true);
+    xhttp.open('GET','localhost:5000/scraper/' + keygen16,true);
     xhttp.send();
 }
 
