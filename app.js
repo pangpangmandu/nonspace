@@ -41,7 +41,7 @@ const scrapeImages = async keygen => {
     var url =searchurl+keygen;
     page.goto(url)
     await page.waitForSelector('.post-image');
-    
+    onsole.log(document.querySelector('.post-image'));
     const data = await page.evaluate( () => {
         const images = document.querySelectorAll('.post-image')
         console.log(images)
