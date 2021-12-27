@@ -56,7 +56,7 @@ justify-content: flex-end;
     height: 40vw;
     margin-top: 1vh;
     margin-bottom: 1vh;
-    background: url("/img/keygen.png");
+    background: url("public/img/keygen.png");
     background-size: contain;
     background-repeat: no-repeat;
 }
