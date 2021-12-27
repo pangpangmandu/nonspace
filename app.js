@@ -37,7 +37,7 @@ const scrapeImages = async keygen => {
     console.log(keygen)
     const browser = await puppeteer.launch()
     const [page] = await browser.pages()
-
+    console.log(page === null)
     var url =searchurl+keygen;
     page.goto(url)
     await page.waitForSelector('.post-image');
