@@ -39,8 +39,16 @@ const scrapeImages = async keygen => {
     const [page] = await browser.pages()
 
     console.log(searchurl+keygen)
-    await page.goto(searchurl+keygen, {waitUntil: 'networkidle0', timeout: 13000})
-    await page.waitForSelector('.post-image', {visible:true, timeout: 13000})
+    await page.goto(searchurl+keygen, {waitUntil: 'domcontentloaded'})
+    let selectorExists = await page.$('.post-image')
+    
+    while(selectorExists === null){
+        await page.goto(searchurl+keygen, {waitUntil: 'domcontentloaded'})
+        console.log("reload")
+        selectorExists = await page.$('.post-image')
+        
+    }
+    // await page.waitForSelector('.post-image', {visible:true, timeout: 13000})
 
     const data = await page.evaluate( () => {
         const images = document.querySelectorAll('.post-image')
