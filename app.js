@@ -60,5 +60,3 @@ const scrapeImages = async keygen => {
 
 
 })();
-
-setInterval(console.log("1sec passed"),1000);
