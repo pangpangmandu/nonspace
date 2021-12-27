@@ -11,6 +11,7 @@ const getImages = () =>{
         if (this.readyState == 4 && this.status == 200){
             document.querySelector("#loading").style.display="none";
             document.querySelector('#keygenimg').innerHTML = ''
+            console.log(this.responseText)
             imgArray = JSON.parse(this.responseText)
             if(imgArray.images.length > 0){
                 imgArray.images.split(',').forEach( function (source) {
