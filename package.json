@@ -6,10 +6,10 @@
   "type": "commonjs",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node app.js",
+    "start": "npm start",
     "dev": "nodemon app.js",
     "start:dev" :"./node_modules/nodemon/bin/nodemon.js app.js",
-    "build": "nodemon --watch app.js"
+    "build": "npm install"
   },
   "homepage": "https://competent-brown-57c09b.netlify.app/",
   "keywords": [],
