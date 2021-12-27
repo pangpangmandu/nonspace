@@ -38,18 +38,10 @@ const scrapeImages = async keygen => {
     const browser = await puppeteer.launch()
     const [page] = await browser.pages()
 
-    console.log(searchurl+keygen)
-    await page.goto(searchurl+keygen, {waitUntil: 'domcontentloaded'})
-    let selectorExists = await page.$('.post-image')
+    var url =searchurl+keygen;
+    page.goto(url)
+    await page.waitForSelector('.post-image');
     
-    while(selectorExists === null){
-        await page.goto(searchurl+keygen, {waitUntil: 'domcontentloaded'})
-        console.log("reload")
-        selectorExists = await page.$('.post-image')
-        
-    }
-    // await page.waitForSelector('.post-image', {visible:true, timeout: 13000})
-
     const data = await page.evaluate( () => {
         const images = document.querySelectorAll('.post-image')
         console.log(images)
