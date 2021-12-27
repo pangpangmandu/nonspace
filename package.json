@@ -9,7 +9,7 @@
     "start": "node app.",
     "dev": "nodemon app.js",
     "start:dev" :"nodemon --watch app.js",
-    "build": "netlify-lambda build app.js /functions --config webpack.functions.js"
+    "build": "npm run start:lambda"
   },
   "keywords": [],
   "author": "",
@@ -21,7 +21,8 @@
     "iconv": "^3.0.1",
     "puppeteer": "^13.0.1",
     "request": "^2.88.2",
-    "yarn": "^1.22.17"
+    "yarn": "^1.22.17",
+    "netlify-lambda": "^2.0.15"
   },
   "devDependencies": {
     "@babel/cli": "^7.16.0",
